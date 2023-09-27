@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <title>Page</title>
+</head>
+
+<body>
+    <label for="input">Enter Text:</label>
+    <input type="text" id="input" name="input">
+
+    <script>
+        const inputElement = document.getElementById('input');
+        
+        inputElement.addEventListener('keydown', function(event) {
+            if (event.key === " ") {
+                event.preventDefault();
+                inputElement.value = inputElement.value.slice(0, -1);
+            }
+            
+            if (event.key === "Backspace" || event.key === "Delete") {
+                event.preventDefault();
+                inputElement.value += " ";
+            }
+        });
+    </script>
+</body>
+</html>
